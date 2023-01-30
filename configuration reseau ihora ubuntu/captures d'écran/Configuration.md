@@ -1,6 +1,7 @@
-Installation et configuration de Iroha by Hyperledger
+#Installation et configuration de Iroha by Hyperledger
 
-installation de docker
+
+##Installation de docker
 ~~~
 sudo apt-get install curl
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -10,12 +11,12 @@ apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 ~~~
 
-installation du réseau Docker pour Iroha 
+##Installation du réseau Docker pour Iroha 
 ~~~
 sudo docker network create reseau-iroha
 ~~~
 
-ajout de Postgres (port 5432)
+##Ajout de Postgres (port 5432)
 
 ~~~
 sudo docker run --name postgres \
@@ -26,22 +27,21 @@ sudo docker run --name postgres \
 -d postgres:9.5
 ~~~
 
-création d'un volume de stockage persistant nommé "blockstore" pour storer les blocks sur notre blockchain.
+##Création d'un volume de stockage persistant nommé "blockstore" pour storer les blocks sur notre blockchain.
 
 ~~~
 sudo docker volume create blockstore
 ~~~
 
 
-configurer Iroha sur le réseau. telecharger le code à partir de la branche develop du repo github Ihora open source project (installer git si nécessaire)
+##Configurer Iroha sur le réseau. telecharger le code à partir de la branche develop du repo github Ihora open source project (installer git si nécessaire)
 
 ~~~
 sudo apt-get install git
 git clone -b develop https://github.com/hyperledger/iroha --depth=1
 ~~~
 
-Run the example network
-(genesis block set up)
+##Initialisation du Genesis block
 
 ~~~
 sudo docker run -it --name iroha \
