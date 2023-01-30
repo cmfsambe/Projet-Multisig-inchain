@@ -53,4 +53,8 @@ sudo docker run -it --name iroha \
 hyperledger/iroha:x86_64-develop
 ~~~
 
+Lancer le conteneur Iroha
 
+~~~
+irohad --config config.docker --genesis_block genesis.block --keypair_name node0
+~~~
